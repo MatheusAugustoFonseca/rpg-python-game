@@ -1,5 +1,5 @@
 import Energy from './Energy';
-import Fighter from './Fighter';
+import Fighter, { SimpleFighter } from './Fighter';
 import Race, { Elf } from './Races';
 import Archetype, { Mage } from './Archetypes';
 import getRandomInt from './utils';
@@ -74,7 +74,7 @@ class Character implements Fighter {
   }
 
   // attack(enemy: Fighter): void;
-  attack(enemy: Fighter): void {
+  attack(enemy: Fighter | SimpleFighter): void {
     const damage = this._strength;
     enemy.receiveDamage(damage);
   }
